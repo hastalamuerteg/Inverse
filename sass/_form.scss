@@ -1,0 +1,49 @@
+@use 'variables';
+@use 'mixins';
+
+.form,
+.form__fields {
+  @include mixins.centerBoxDirection(column);
+  margin: 0 auto;
+  width: 100%;
+
+  @include mixins.respond(phone) {
+    margin-top: 1.5rem;
+  }
+}
+.form__email {
+  margin-bottom: 0.8rem;
+}
+
+.form__forgot {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: variables.$tertiary-color;
+  transition: all 0.3s;
+
+  &:hover {
+    color: variables.$tertiary-color;
+    text-shadow: 0.1rem 0.7rem 1.2rem variables.$tertiary-color;
+  }
+}
+
+.input {
+  width: 80%;
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: #302d2d25;
+  transition: all 0.2s;
+  color: variables.$tertiary-color;
+
+  @include mixins.respond(phone) {
+    width: 90%;
+  }
+}
+
+.input:focus {
+  border-left: 0.4rem solid variables.$tertiary-color;
+  border-right: 0.4rem solid variables.$tertiary-color;
+  outline: none;
+}

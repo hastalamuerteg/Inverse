@@ -1,0 +1,85 @@
+@use 'mixins';
+@use 'variables';
+
+.login__box--dark {
+  background-color: variables.$login-box-dark;
+  transition: all 0.8s;
+  box-shadow: 0 0.5rem 2rem rgba(89, 98, 179, 0.514);
+}
+
+.heading__primary--dark {
+  color: variables.$dark-mode-tertiary;
+  background: -webkit-linear-gradient(
+    180deg,
+    variables.$dark-mode-tertiary 0%,
+    variables.$dark-mode-secondary 30%,
+    variables.$dark-mode-tertiary 100%
+  );
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form__email--dark,
+.form__password--dark {
+  background-color: #00000049;
+  color: variables.$dark-mode-tertiary;
+  &::placeholder {
+    color: variables.$font-color;
+  }
+
+  &:focus {
+    border-left: 0.4rem solid variables.$dark-mode-tertiary;
+    border-right: 0.4rem solid variables.$dark-mode-tertiary;
+    caret-color: variables.$dark-mode-tertiary;
+  }
+}
+
+.form__forgot--dark {
+  color: variables.$dark-mode-tertiary;
+  transition: all 0.3s;
+
+  &:hover {
+    color: variables.$font-color;
+    text-shadow: 0.1rem 0.7rem 1.2rem variables.$font-color;
+  }
+}
+
+.btn__login--dark {
+  background-image: linear-gradient(
+    90deg,
+    variables.$dark-mode-tertiary 0%,
+    variables.$dark-mode-secondary 30%,
+    variables.$dark-mode-primary 100%
+  );
+  color: variables.$white;
+}
+
+.btn__signup--dark {
+  background-color: variables.$dark-mode-primary;
+  color: variables.$dark-mode-tertiary;
+  border: 0.15rem solid variables.$dark-mode-tertiary;
+  transition: all 0.3s;
+
+  &:hover {
+    color: variables.$dark-mode-secondary;
+    background-color: lighten(
+      $color: variables.$dark-mode-tertiary,
+      $amount: 2%
+    );
+  }
+}
+
+.social__media--dark li {
+  a {
+    color: variables.$font-color;
+    &:hover {
+      color: variables.$dark-mode-tertiary;
+      text-shadow: 0.1rem 0.7rem 1.2rem variables.$dark-mode-tertiary;
+    }
+  }
+}
+
+.switch__title--dark {
+  color: variables.$font-color;
+}

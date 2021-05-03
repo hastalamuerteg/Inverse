@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>&#8226; Inverse</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="./images/background.jpg" alt="background" class="background" />
+      <img src="./images/backgorund-dark.png" alt="background" class="background__dark" hidden/>
+      <div class="login__box">
+            <h1 class="heading__primary ">Welcome</span></h1>
+            <p class="login__box--notice">Oh! We don't recognize this user, please try again.</p>
+            <form class="form">
+            <div class="form__fields ">
+                <input type="email" required class="form__email input " placeholder="E-mail"/>
+                <input type="password" required class="form__password input" placeholder="Password"/>
+                <a href="" class="form__forgot">Forgot your password?</a>
+            </div>
+            <div class="form__buttons ">
+                <button class="btn__login btn">Login</button>
+                <button class="btn__signup btn">Sign up</button>
+            </div>
+            </form>
+            <div class="social__media">
+                <ul>
+                  <li><a href="https://github.com/hastalamuerteg" target="_blank">Github</a></li>
+                  <li><a href="https://www.linkedin.com/in/gabriel--vicente/" target="_blank">LinkedIn</a></li>
+                  <li><a href="https://www.instagram.com/gabrielo.vicent/" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="switch__container">
+            <h3 class="switch__title">Dark mode</h3>
+              <label class="switch">
+                <input type="checkbox" class="checkbox">
+                <span class="switch__slider"></span>
+              </label>
+            </div>
+      </div>
+      <div class="modal modal__box">
+          <div class="modal__form">
+            <h3>Tell us your email</h3>
+            <form class="modal__form--container">
+              <input type="text" placeholder="Email" class="input">
+              <button class="btn">Redefine password</button>
+              <a href="" class="modal__back--btn">&#8592; Back</a>
+            </form>
+          </div>
+          <div class="modal__background">
+            <img src="./images/forgot.svg" alt="Security" class="modal__background--default">
+            <img src="./images/forgot-dark.svg" alt="Security" class="modal__background--dark" hidden>
+          </div>
+      </div>
+    </header>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,523 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 48em) {
+  html {
+    font-size: 57.5%;
+  }
+}
+
+body {
+  font-family: Poppins, "sans-serif";
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.background,
+.background__dark {
+  height: 100vh;
+  width: 150rem;
+}
+
+.login__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  margin: 0 auto;
+  height: 80vh;
+  width: 40%;
+  background-color: #ffffffc0;
+  border-radius: 2rem;
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.1rem);
+  box-shadow: 0 0.5rem 2rem rgba(212, 97, 43, 0.575);
+  animation: loginBox ease-in-out 1.5s;
+  backface-visibility: hidden;
+  transition: all 0.8s;
+}
+@media (max-width: 48em) {
+  .login__box {
+    width: 70%;
+  }
+}
+
+.login__box--animated {
+  animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.login__box--notice {
+  font-size: 1.5rem;
+  color: #fc2220;
+  margin: 0.8rem;
+  padding: 1.5rem 0.5rem 0.5rem 0;
+  display: none;
+  text-align: center;
+}
+
+.heading__primary {
+  position: absolute;
+  top: 5%;
+  font-size: 5rem;
+  color: #5a0d5b;
+  background: -webkit-linear-gradient(180deg, #01022e 0%, #5a0d5b 30%, #fc2220 100%);
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 37.5em) {
+  .heading__primary {
+    font-size: 4rem;
+  }
+}
+
+.social__media {
+  margin: 0 auto;
+}
+.social__media ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.social__media ul li {
+  list-style: none;
+  margin: 0.7rem;
+}
+.social__media ul a {
+  color: #5a0d5b;
+  transition: all 0.2s;
+  font-size: 1.5rem;
+}
+.social__media ul a:hover {
+  color: #fc2220;
+  text-shadow: 0.1rem 0.7rem 1.2rem #fc2220;
+}
+
+.form,
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+@media (max-width: 37.5em) {
+  .form,
+.form__fields {
+    margin-top: 1.5rem;
+  }
+}
+
+.form__email {
+  margin-bottom: 0.8rem;
+}
+
+.form__forgot {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: #fc2220;
+  transition: all 0.3s;
+}
+.form__forgot:hover {
+  color: #fc2220;
+  text-shadow: 0.1rem 0.7rem 1.2rem #fc2220;
+}
+
+.input {
+  width: 80%;
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: #302d2d25;
+  transition: all 0.2s;
+  color: #fc2220;
+}
+@media (max-width: 37.5em) {
+  .input {
+    width: 90%;
+  }
+}
+
+.input:focus {
+  border-left: 0.4rem solid #fc2220;
+  border-right: 0.4rem solid #fc2220;
+  outline: none;
+}
+
+.form__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 37.5em) {
+  .form__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: stretch;
+    width: 90%;
+  }
+}
+
+.btn {
+  padding: 1.5rem 4.5rem;
+  margin: 0.8rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn:active {
+  transform: scale(1);
+}
+
+.btn__login {
+  background-image: linear-gradient(90deg, #01022e 0%, #5a0d5b 30%, #fc2220 100%);
+  color: #fff;
+  font-weight: semi-bold;
+}
+
+.btn__signup {
+  border: 0.15rem solid;
+  color: #fc2220;
+  transition: all 0.4s;
+}
+.btn__signup:hover {
+  color: #ddd;
+  background-color: #f00503;
+}
+
+.switch__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch__title {
+  margin: 0.5rem;
+  color: #5a0d5b;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 5rem;
+  height: 3rem;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch input:checked + .switch__slider {
+  background-color: #9589dd;
+}
+.switch input:checked + .switch__slider::before {
+  -webkit-transform: translateX(2rem);
+  -ms-transform: translateX(2rem);
+  transform: translateX(2rem);
+  background-color: #090b1a;
+}
+
+.switch__slider {
+  border-radius: 2rem;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ddd;
+  transition: all 0.2s;
+}
+.switch__slider::before {
+  border-radius: 2rem;
+  position: absolute;
+  content: "";
+  width: 2.2rem;
+  height: 2.2rem;
+  bottom: 0.4rem;
+  left: 0.5rem;
+  background-color: #5a0d5b;
+  transition: all 0.2s;
+}
+
+.login__box--dark {
+  background-color: #0a0909c0;
+  transition: all 0.8s;
+  box-shadow: 0 0.5rem 2rem rgba(89, 98, 179, 0.514);
+}
+
+.heading__primary--dark {
+  color: #9589dd;
+  background: -webkit-linear-gradient(180deg, #9589dd 0%, #153a76 30%, #9589dd 100%);
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form__email--dark,
+.form__password--dark {
+  background-color: #00000049;
+  color: #9589dd;
+}
+.form__email--dark::placeholder,
+.form__password--dark::placeholder {
+  color: #ddd;
+}
+.form__email--dark:focus,
+.form__password--dark:focus {
+  border-left: 0.4rem solid #9589dd;
+  border-right: 0.4rem solid #9589dd;
+  caret-color: #9589dd;
+}
+
+.form__forgot--dark {
+  color: #9589dd;
+  transition: all 0.3s;
+}
+.form__forgot--dark:hover {
+  color: #ddd;
+  text-shadow: 0.1rem 0.7rem 1.2rem #ddd;
+}
+
+.btn__login--dark {
+  background-image: linear-gradient(90deg, #9589dd 0%, #153a76 30%, #090b1a 100%);
+  color: #fff;
+}
+
+.btn__signup--dark {
+  background-color: #090b1a;
+  color: #9589dd;
+  border: 0.15rem solid #9589dd;
+  transition: all 0.3s;
+}
+.btn__signup--dark:hover {
+  color: #153a76;
+  background-color: #9c91df;
+}
+
+.social__media--dark li a {
+  color: #ddd;
+}
+.social__media--dark li a:hover {
+  color: #9589dd;
+  text-shadow: 0.1rem 0.7rem 1.2rem #9589dd;
+}
+
+.switch__title--dark {
+  color: #ddd;
+}
+
+@keyframes loginBox {
+  0% {
+    opacity: 0;
+    transform: translateY(30rem);
+    transition: ease-in 0.5s;
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-0.7rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes modalBox {
+  0% {
+    opacity: 0;
+    transform: translateX(-100rem);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin: 0 auto;
+  width: 70%;
+  height: 60%;
+  border-radius: 2rem;
+  display: none;
+  animation: modalBox ease-in-out 1.2s;
+  backface-visibility: hidden;
+}
+@media (max-width: 37.5em) {
+  .modal {
+    width: 80%;
+  }
+}
+
+.modal__box {
+  background-color: white;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.modal__form h3 {
+  margin: 1.5rem;
+  font-size: 2rem;
+  color: #fc2220;
+}
+
+.modal__form--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.modal__form--container input {
+  width: 40%;
+  transition: all 0.25s;
+}
+.modal__form--container input:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 48em) {
+  .modal__form--container input {
+    width: 80%;
+  }
+}
+@media (max-width: 37.5em) {
+  .modal__form--container input {
+    width: 90%;
+  }
+}
+.modal__form--container button {
+  border: 0.2rem solid #fc2220;
+  color: #fc2220;
+  transition: all 0.2s;
+}
+.modal__form--container button:hover {
+  color: #ddd;
+  background-color: #fc1816;
+}
+.modal__form--container a {
+  color: #fc2220;
+  font-size: 1.7rem;
+  transition: all 0.2s;
+}
+.modal__form--container a:hover {
+  color: #153a76;
+  transform: scale(1.1);
+}
+
+.modal__background {
+  margin: 0 auto;
+  position: absolute;
+  left: 5%;
+}
+.modal__background img {
+  margin: 1rem;
+  width: 30rem;
+  opacity: 0.8;
+}
+
+.modal__box--dark {
+  background-color: #0a0909c0;
+  transition: all 0.8s;
+  box-shadow: 0 0.5rem 2rem rgba(89, 98, 179, 0.514);
+}
+
+.modal__form--dark h3 {
+  color: #9589dd;
+}
+.modal__form--dark input {
+  background-color: #00000049;
+  color: #9589dd;
+}
+.modal__form--dark input::placeholder {
+  color: #ddd;
+}
+.modal__form--dark input:focus {
+  border-left: 0.4rem solid #9589dd;
+  border-right: 0.4rem solid #9589dd;
+  caret-color: #9589dd;
+}
+.modal__form--dark button {
+  background-color: #090b1a;
+  color: #9589dd;
+  border: 0.15rem solid #9589dd;
+  transition: all 0.3s;
+}
+.modal__form--dark button:hover {
+  color: #153a76;
+  background-color: #9c91df;
+}
+.modal__form--dark a {
+  color: #9589dd;
+  transition: all 0.25s;
+}
+.modal__form--dark a:hover {
+  transform: scale(1.05);
+  color: #ddd;
+}
+
+/*# sourceMappingURL=style.css.map */

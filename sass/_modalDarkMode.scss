@@ -1,0 +1,52 @@
+@use 'variables';
+@use 'mixins';
+
+.modal__box--dark {
+  @include mixins.modalType(variables.$login-box-dark);
+  transition: all 0.8s;
+  box-shadow: 0 0.5rem 2rem rgba(89, 98, 179, 0.514);
+}
+
+.modal__form--dark {
+  h3 {
+    color: variables.$dark-mode-tertiary;
+  }
+
+  input {
+    background-color: #00000049;
+    color: variables.$dark-mode-tertiary;
+    &::placeholder {
+      color: variables.$font-color;
+    }
+
+    &:focus {
+      border-left: 0.4rem solid variables.$dark-mode-tertiary;
+      border-right: 0.4rem solid variables.$dark-mode-tertiary;
+      caret-color: variables.$dark-mode-tertiary;
+    }
+  }
+
+  button {
+    background-color: variables.$dark-mode-primary;
+    color: variables.$dark-mode-tertiary;
+    border: 0.15rem solid variables.$dark-mode-tertiary;
+    transition: all 0.3s;
+
+    &:hover {
+      color: variables.$dark-mode-secondary;
+      background-color: lighten(
+        $color: variables.$dark-mode-tertiary,
+        $amount: 2%
+      );
+    }
+  }
+
+  a {
+    color: variables.$dark-mode-tertiary;
+    transition: all 0.25s;
+    &:hover {
+      transform: scale(1.05);
+      color: variables.$font-color;
+    }
+  }
+}

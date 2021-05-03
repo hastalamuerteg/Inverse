@@ -1,0 +1,50 @@
+@use 'variables';
+@use 'mixins';
+
+.form__buttons {
+  display: flex;
+  justify-content: space-between;
+
+  @include mixins.respond(phone) {
+    @include mixins.centerBoxDirection(column);
+    align-items: stretch;
+    width: 90%;
+  }
+}
+
+.btn {
+  @include mixins.button;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.btn__login {
+  background-image: linear-gradient(
+    90deg,
+    variables.$primary-color 0%,
+    variables.$secondary-color 30%,
+    variables.$tertiary-color 100%
+  );
+  color: variables.$white;
+  font-weight: semi-bold;
+}
+
+.btn__signup {
+  border: 0.15rem solid;
+  color: variables.$tertiary-color;
+  transition: all 0.4s;
+
+  &:hover {
+    color: variables.$font-color;
+    background-color: darken($color: variables.$tertiary-color, $amount: 8%);
+  }
+}

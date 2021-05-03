@@ -1,0 +1,98 @@
+@use 'variables';
+@use 'mixins';
+
+.header {
+  @include mixins.centerBoxDirection(row);
+  height: 100vh;
+  position: relative;
+}
+
+.background,
+.background__dark {
+  height: 100vh;
+  width: 150rem;
+}
+
+.login__box {
+  @include mixins.centerBoxDirection(column);
+  flex-wrap: wrap;
+  position: absolute;
+  margin: 0 auto;
+  height: 80vh;
+  width: 40%;
+  background-color: variables.$login-box;
+  border-radius: 2rem;
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.1rem);
+  box-shadow: 0 0.5rem 2rem rgba(212, 97, 43, 0.575);
+
+  animation: loginBox ease-in-out 1.5s;
+  backface-visibility: hidden;
+
+  transition: all 0.8s;
+
+  @include mixins.respond(tab-port) {
+    width: 70%;
+  }
+}
+
+.login__box--animated {
+  animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.login__box--notice {
+  font-size: 1.5rem;
+  color: variables.$tertiary-color;
+  margin: 0.8rem;
+  padding: 1.5rem 0.5rem 0.5rem 0;
+  display: none;
+  text-align: center;
+}
+
+.heading__primary {
+  position: absolute;
+  top: 5%;
+  font-size: 5rem;
+  color: variables.$secondary-color;
+  background: -webkit-linear-gradient(
+    180deg,
+    variables.$primary-color 0%,
+    variables.$secondary-color 30%,
+    variables.$tertiary-color 100%
+  );
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include mixins.respond(phone) {
+    font-size: 4rem;
+  }
+}
+
+.social__media {
+  margin: 0 auto;
+  ul {
+    @include mixins.centerBoxDirection(row);
+    justify-content: center;
+
+    li {
+      list-style: none;
+      margin: 0.7rem;
+    }
+
+    a {
+      color: variables.$secondary-color;
+      transition: all 0.2s;
+      font-size: 1.5rem;
+
+      &:hover {
+        color: variables.$tertiary-color;
+        text-shadow: 0.1rem 0.7rem 1.2rem variables.$tertiary-color;
+      }
+    }
+  }
+}
