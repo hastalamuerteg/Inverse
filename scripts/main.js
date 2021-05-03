@@ -96,7 +96,7 @@ const handleForgotPassword = (e) => {
 
 const handleLoginBtn = (e) => {
   e.preventDefault();
-  if (emailInput.value === "teste@gmail.com" || passwordInput.value === "") {
+  if (emailInput.value === "" || passwordInput.value === "") {
     loginContainer.classList.toggle("login__box--animated");
     loginNotice.style.display = "flex";
     switchDarkModeBtn.checked
